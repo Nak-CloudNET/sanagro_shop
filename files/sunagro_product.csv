@@ -1,0 +1,221 @@
+Code,Name,Name KH,Category Code,Unit ID,Cost,Price,Alert Quantity, Tax Rate Name,Tax Method,Subcategory Code,Product Variants Separated by |,Supplier1(No),Supplier2(No),Supplier3(No),Supplier4(No),Supplier5(No),Custom Field 1,Custom Field 2,Custom Field 3,Custom Field 4,Custom Field 5,Custom Field 6,Image,Type(standard or service)
+2AMPR01,Amprolium Hydro,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2BMD01,BMD Granula,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2BRE01,Medimix Breeder,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2BRO01,Medimix Broiller,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2CHO01,Choline Chloride 60%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2COL01,Colistine Sulphate 100%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2COP01,Coper Sulphate 25%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2CYG01,Cygro 1%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2CYS01,Cysteamine HCL,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2FEE01,Feed Curb Dry,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2FLO01,Florfeninol,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2IRO01,Iron Sulphate,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2KEMT01,KEMTRACE Chromium,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2KENZ01,Kenzyme Top Dry,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2LAY01,Medimix Layer,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2LEA01,Leader Red 10%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2LYS01,L-Lysine,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2MET01,DL-Methionine,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2MIC01,Microtech Powder,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2MILK01,Milkin Plus,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2MIN01,Medimix Mineral,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2MYCO01,Myco Curb Liquid,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2NATU01,Natuzyme,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2OROG01,Oroglo 2%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2OXY01,Oxytetracycline 98%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2STO01,Stone bran,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2TAT01,Tatrazine,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2THRE01,L-Thrionine,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2TIAM01,Tiamulin 80%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2TOX01,Toxfin,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2VIT01,Medimix Vitamine,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2VIT02,Vitamine C,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2VITU01,Vituprop Powder,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2ZIN01,Zinc Sulphate,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2SAL01,Salt,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2SBM01,Soybean Meal 46%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2WBP01,Wheat bran No.1,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2WBP02,Wheat bran No.2,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2WHE01,Whey Permeat,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2WHE02,Wheat for Feed,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2XXX,UNKNOWN Raw Material,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2BLO01,Blood Meal 90%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2CAL01,Calcium Carbonate(Limestone),,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2CAR01,Carob Powder,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2CAS01,Cassava,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2CAS02,Cassava Bran,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2COP02,Copra Meal,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2COR01,Corn No.1,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2DCP01,Dicalcium Phosphate 18%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2DDG01,DDGS profat 36%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2FIS01,Fish Meal 60% cp,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2LAC01,Lactose Pure,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2MBM01,Meat and Bone Meal 50%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2MBM02,Meat and Bone Meal 48-50%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2MBM03,Meat and Bone Meal 44%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2MCP01,Mono-calcium Phosphate 22%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2MDC01,Mono-Dicalcium Phosphate 21%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2OIL01,Cooking Oil,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2OIL02,Vegetable oil(None refinary),,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2OIL03,Poultry Oil(fat) No.1,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2OIL04,Fish Oil No.1,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2OIL05,Fish Oil No.2,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2OIL06,Palm Oil(None refinary),,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2PKE01,Palm Kernel Meal,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2PLA01,Plasma Powder,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2POU01,Poultry Meal 65%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2POU02,Poultry Meal 60%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2RIC01,Rice Bran No.1,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2RIC02,Rice Bran No.2,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+2ZIN02,Zinc Oxide 75%,,RAW002,1,0,0,0,,,,,,,,,,,,,,,,no_image.png,standard
+3AMI01,Aminogrow WS 1kg,,MED003,3,0,16.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3AMP01,Amprol 12% Solution 1L,,MED003,4,0,25.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3BES01,Bestlytes Water Sol. 1kg,,MED003,5,0,8.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3BES02,Bestlytes Plus. 1L,,MED003,4,0,8.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3BESM01,BESMINERAL-P Solution,,MED003,6,0,7.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3BETA01,BETASOL-C Oral 1000ml,,MED003,4,0,0,50,,,,,,,,,,,,,,,,no_image.png,standard
+3CARN01,CARNITONIC Oral 1000ml,,MED003,4,0,0,50,,,,,,,,,,,,,,,,no_image.png,standard
+3CHLO01,Chloramycine inj 20ml,,MED003,6,0,2.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3CHLO02,Chloramycine inj 100ml,,MED003,6,0,7.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3CHLO03,Chloramycine inj 50ml,,MED003,6,0,4.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3COCI01,COCIVET-12% 100g,,MED003,5,0,1.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+3COLI01,COLIDOX 100g,,MED003,5,0,2.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+3COLI02,Colimoxsone inj 20ml,,MED003,6,0,1.70,50,,,,,,,,,,,,,,,,no_image.png,standard
+3COLI04,Colimoxsone inj 50ml,,MED003,6,0,3.70,50,,,,,,,,,,,,,,,,no_image.png,standard
+3COLI05,Colimoxsone inj 100ml,,MED003,6,0,6.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3DOX01,Doxin-200 WS 1kg,,MED003,3,0,33.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3ENR01,Enrovet 10% Oral Sol. 1L,,MED003,4,0,17.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3ESP01,E.S.PRIM 10g,,MED003,5,0,0,50,,,,,,,,,,,,,,,,no_image.png,standard
+3ESP02,E.S.PRIM 50g,,MED003,5,0,0,50,,,,,,,,,,,,,,,,no_image.png,standard
+3ESP03,E.S.PRIM 100g,,MED003,5,0,3.20,50,,,,,,,,,,,,,,,,no_image.png,standard
+3ESP04,E.S.PRIM 1Kg,,MED003,5,0,30.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3FLUQ01,Fluquin G inj 20ml,,MED003,6,0,1.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3FLUQ02,Fluquin G inj 50ml,,MED003,6,0,3.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3FLUQ03,Fluquin G inj 100ml,,MED003,6,0,5.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3HEPA01,Heparenol 1L,,MED003,6,0,13.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3HIP01,Hipraviar-Clon/H120 1000dose,,MED003,4,0,7.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3HIP02,Hipraviar-S/H120 1000dose,,MED003,4,0,7.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3HIP03,Hipragumboro GM97 1000dose,,MED003,4,0,8.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3INTR01,Introvit A+WS 100g,,MED003,5,0,2.30,50,,,,,,,,,,,,,,,,no_image.png,standard
+3LEVA01,Leva-200 100g,,MED003,5,0,3.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3LINCO01,Lincospec inj 20ml,,MED003,6,0,2.20,50,,,,,,,,,,,,,,,,no_image.png,standard
+3LINCO02,Lincospec inj 50ml,,MED003,6,0,4.20,50,,,,,,,,,,,,,,,,no_image.png,standard
+3LINCO03,Lincospec inj 100ml,,MED003,6,0,7.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3MICR01,Microguard 10g,,MED003,5,0,0.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3OXYT01,OXYTOCIN 20 50ml,,MED003,6,0,4.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+3PARA01,Paracure-100 inj 20ml,,MED003,6,0,1.15,50,,,,,,,,,,,,,,,,no_image.png,standard
+3PARA02,Paracure-100 inj 100ml,,MED003,6,0,3.30,50,,,,,,,,,,,,,,,,no_image.png,standard
+3PARA05,PARADEX 100g,,MED003,6,0,1.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3PHOS01,Phosteric 100g,,MED003,5,0,3.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANC001,SANCOLMOX 100g,,MED003,5,0,2.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANC002,SANCOLTRIM 100g,,MED003,5,0,1.90,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANFE01,Sanafer 20% B12 Inj. 20ml,,MED003,6,0,1.25,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANFE02,Sanafer 20% B12 Inj. 50ml,,MED003,6,0,2.75,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANFE03,Sanafer 20% B12 Inj. 100ml,,MED003,6,0,5.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANFL01,SANFLOXIN 10% Oral Liq 1L,,MED003,6,0,11.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANFL02,SANFLOXIN inj 100ml,,MED003,6,0,4.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANFL05,SANFLOR 100 Oral  200ml,,MED003,6,0,4.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANFL06,SANFLOR 100 Oral  500ml,,MED003,6,0,8.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANFL07,SANFLOR 100 Oral 1L,,MED003,6,0,15.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANM00,SANAMOX-G inj 100ml,,MED003,6,0,6.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANM01,SANAMOX-G inj 20ml,,MED003,6,0,1.70,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANM02,SANAMOX-G inj 50ml,,MED003,6,0,3.75,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANM03,SANAMOX 150LA inj 20ml,,MED003,6,0,1.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANM05,SANAMOX 150LA inj 50ml,,MED003,6,0,3.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SANM06,SANAMOX 150LA inj 100ml,,MED003,6,0,5.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SMEC01,SANAMEC 1% 20ml,,MED003,6,0,1.40,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SMEC02,SANAMEC 1% 50ml,,MED003,6,0,3.30,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SMEC03,SANAMEC 1% 100ml,,MED003,6,0,6.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3STRE01,STRESSOL ORAL 1L,,MED003,4,0,9.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SULT01,SULTRICOX 200ml,,MED003,6,0,2.80,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SULT02,SULTRICOX 500ml,,MED003,6,0,6.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3SULT03,SULTRICOX 1L,,MED003,6,0,12.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+3TYSIN01,TYSINDOX-200 100g,,MED003,5,0,2.80,50,,,,,,,,,,,,,,,,no_image.png,standard
+3TYSIN02,TYSIN inj 20ml,,MED003,6,0,1.35,50,,,,,,,,,,,,,,,,no_image.png,standard
+3VITA01,Vitavet Blend 1kg,,MED003,5,0,7.70,50,,,,,,,,,,,,,,,,no_image.png,standard
+3VITU01,Vitufour inj 20ml,,MED003,6,0,2.20,50,,,,,,,,,,,,,,,,no_image.png,standard
+3VITU02,Vitufour inj 50ml,,MED003,6,0,4.25,50,,,,,,,,,,,,,,,,no_image.png,standard
+3VITU03,Vitufour inj 100ml,,MED003,6,0,7.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+4BDKP01,BDK PM 500 dose,,VAC004,6,0,16.00,5,,,,,,,,,,,,,,,,no_image.png,standard
+4BIOF01,Bio Fors FC 2000ds,,VAC004,6,0,40.00,5,,,,,,,,,,,,,,,,no_image.png,standard
+4DUCK01,Duck-Vac (Pes) Vaccine 1000ds,,VAC004,6,0,14.00,5,,,,,,,,,,,,,,,,no_image.png,standard
+4EURI01,Eurican DHPPI2L 1ds,,VAC004,6,0,5.00,5,,,,,,,,,,,,,,,,no_image.png,standard
+4FLOW01,Flow Pox Vaccine 200ds,,VAC004,6,0,3.00,5,,,,,,,,,,,,,,,,no_image.png,standard
+4HIPRA01,Hipraviar-Clon/H120 1000ds,,VAC004,6,0,8.00,5,,,,,,,,,,,,,,,,no_image.png,standard
+4HIPRA02,Hipraviar-S/H120 1000dose,,VAC004,6,0,8.00,5,,,,,,,,,,,,,,,,no_image.png,standard
+4HIPRA03,Hipragumboro GM97 1000dose,,VAC004,6,0,8.00,5,,,,,,,,,,,,,,,,no_image.png,standard
+4HIPRA04,Hiprapox 1000ds,,VAC004,6,0,8.50,5,,,,,,,,,,,,,,,,no_image.png,standard
+4NEWC01,NEW CHOLERA VACCINE 500 dose,,VAC004,6,0,40.00,5,,,,,,,,,,,,,,,,no_image.png,standard
+4PARV01,Parvoruvax 5 dose,,VAC004,5,0,9.00,5,,,,,,,,,,,,,,,,no_image.png,standard
+4PEST01,Pestiffa 10 dose,,VAC004,5,0,5.50,5,,,,,,,,,,,,,,,,no_image.png,standard
+5AUTO01,Automatic Syringe 0.5ml,,OTH005,2,0,55.00,0,,,,,,,,,,,,,,,,no_image.png,standard
+5GASB01,Gas Brooder M8 1000chicks,,OTH005,2,0,80.00,0,,,,,,,,,,,,,,,,no_image.png,standard
+6BRO01,Broiler D.O.C  1Chicken,,OTH005,7,0,0.70,0,,,,,,,,,,,,,,,,no_image.png,standard
+6NAT01,Nation chick DOC,,OTH005,7,0,0.5,0,,,,,,,,,,,,,,,,no_image.png,standard
+S700-30K,Sanagro feed S-700 30kg,,S-001,5,0,31.60,5,,,,,,,,,,,,,,,,no_image.png,standard
+S700-5K,Sanagro feed S-700(5kgx 6bags),,S-001,5,0,32.50,5,,,,,,,,,,,,,,,,no_image.png,standard
+S701-30K,Sanagro feed S-701 30kg,,S-001,5,0,23.10,50,,,,,,,,,,,,,,,,no_image.png,standard
+S701-5K,Sanagro feed S-701(5kgx 6bags),,S-001,5,0,24.00,5,,,,,,,,,,,,,,,,no_image.png,standard
+S703M,Sanagro feed S-703 Mash 30kg,,S-001,5,0,14.10,50,,,,,,,,,,,,,,,,no_image.png,standard
+S703P,Sanagro feed S-703 Pellet 30kg,,S-001,5,0,14.40,50,,,,,,,,,,,,,,,,no_image.png,standard
+S704M,Sanagro feed S-704 Mash 30kg,,S-001,5,0,13.80,50,,,,,,,,,,,,,,,,no_image.png,standard
+S704P,Sanagro feed S-704 Pellet 30kg,,S-001,5,0,14.10,50,,,,,,,,,,,,,,,,no_image.png,standard
+S705M,Sanagro feed S-705 Mash 30kg,,S-001,5,0,13.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+S705P,Sanagro feed S-705 Pellet 30kg,,S-001,5,0,13.80,50,,,,,,,,,,,,,,,,no_image.png,standard
+S705XM,Sanagro feed S-705X Mash 30kg,,S-001,5,0,13.80,50,,,,,,,,,,,,,,,,no_image.png,standard
+S705XP,Sanagro feed S-705X Pellet30kg,,S-001,5,0,14.10,50,,,,,,,,,,,,,,,,no_image.png,standard
+S706M,Sanagro feed S-706 Mash 30kg,,S-001,5,0,13.10,50,,,,,,,,,,,,,,,,no_image.png,standard
+S706P,Sanagro feed S-706 Pellet 30kg,,S-001,5,0,13.40,50,,,,,,,,,,,,,,,,no_image.png,standard
+S707M,Sanagro feed S-707 Mash 30kg,,S-001,5,0,14.90,50,,,,,,,,,,,,,,,,no_image.png,standard
+S707P,Sanagro feed S-707 Pellet 30kg,,S-001,5,0,15.20,50,,,,,,,,,,,,,,,,no_image.png,standard
+S710C,Sanagro feed S-710 Crumble30kg,,S-001,5,0,15.20,50,,,,,,,,,,,,,,,,no_image.png,standard
+S711C,Sanagro feed S-711 Crumble30kg,,S-001,5,0,15.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S712P,Sanagro feed S-712 Pellet 30kg,,S-001,5,0,14.80,50,,,,,,,,,,,,,,,,no_image.png,standard
+S715C,Sanagro feed S-715 Crumble30kg,,S-001,5,0,14.40,50,,,,,,,,,,,,,,,,no_image.png,standard
+S716C,Sanagro feed S-716 Crumble30kg,,S-001,5,0,14.20,50,,,,,,,,,,,,,,,,no_image.png,standard
+S716P,Sanagro feed S-716 Pellet 30kg,,S-001,5,0,14.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S722M,Sanagro feed S-722 Mash 30kg,,S-001,5,0,11.70,50,,,,,,,,,,,,,,,,no_image.png,standard
+S722P,Sanagro feed S-722 Pellet 30kg,,S-001,5,0,12.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S728M,Sanagro feed S-728 Mash 30kg,,S-001,5,0,15.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+S729DUCK,S.AMATAK Feed S729D Pellet 30k,,S-001,5,0,13.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S729M,Sanagro feed S-729 Mash 30kg,,S-001,5,0,15.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S730P,Sanagro feed S-730 Pellet 30kg,,S-001,5,0,15.20,50,,,,,,,,,,,,,,,,no_image.png,standard
+S731P,Sanagro feed S-731 Pellet 30kg,,S-001,5,0,14.20,50,,,,,,,,,,,,,,,,no_image.png,standard
+S732P,Sanagro feed S-732 Pellet 30kg,,S-001,5,0,13.90,50,,,,,,,,,,,,,,,,no_image.png,standard
+S733P,Sanagro feed S-733 Pellet 30kg,,S-001,5,0,14.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S736P,Sanagro feed S-736 Pellet 30kg,,S-001,5,0,15.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S740-30K,S.Klang feed S-740 30kg,,S-001,5,0,31.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+S740-5K,S.Klang feed S-740(5kgx6bags),,S-001,5,0,32.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+S741-30K,S.Klang feed S-741 30kg,,S-001,5,0,23.10,50,,,,,,,,,,,,,,,,no_image.png,standard
+S741-5K,S.Klang feed S-741(5kgx6bags),,S-001,5,0,24.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S743M,S.Klang feed S-743 Mash 30kg,,S-001,5,0,13.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+S743P,S.Klang feed S-743 Pellet 30kg,,S-001,5,0,13.90,50,,,,,,,,,,,,,,,,no_image.png,standard
+S744M,S.Klang feed S-744 Mash 30kg,,S-001,5,0,13.30,50,,,,,,,,,,,,,,,,no_image.png,standard
+S744P,S.Klang feed S-744 Pellet 30kg,,S-001,5,0,13.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+S745M,S.Klang feed S-745 Mash 30kg,,S-001,5,0,13.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S745P,S.Klang feed S-745 Pellet 30kg,,S-001,5,0,13.30,50,,,,,,,,,,,,,,,,no_image.png,standard
+S745XM,S.Klang feed S-745X Mash 30kg,,S-001,5,0,13.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+S745XP,S.Klang feed S-745X Pellet30kg,,S-001,5,0,13.90,50,,,,,,,,,,,,,,,,no_image.png,standard
+S746M,S.Klang feed S-746 Mash 30kg,,S-001,5,0,12.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+S746P,S.Klang feed S-746 Pellet 30kg,,S-001,5,0,12.90,50,,,,,,,,,,,,,,,,no_image.png,standard
+S747M,S.Klang feed S-747 Mash 30kg,,S-001,5,0,14.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+S747P,S.Klang feed S-747 Pellet 30kg,,S-001,5,0,14.80,50,,,,,,,,,,,,,,,,no_image.png,standard
+S750C,S.Klang feed S-750 Crumble30kg,,S-001,5,0,14.80,50,,,,,,,,,,,,,,,,no_image.png,standard
+S751C,S.Klang feed S-751 Crumble30kg,,S-001,5,0,14.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+S752P,S.Klang feed S-752 Pellet 30kg,,S-001,5,0,14.40,50,,,,,,,,,,,,,,,,no_image.png,standard
+S755C,S.Klang feed S-755 Crumble30kg,,S-001,5,0,14.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S756C,S.Klang feed S-756 Crumble30kg,,S-001,5,0,13.80,50,,,,,,,,,,,,,,,,no_image.png,standard
+S756P,S.Klang feed S-756 Pellet 30kg,,S-001,5,0,13.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+S765P,S.Klang feed S-765 Pellet 30kg,,S-001,5,0,15.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S766P,S.Klang feed S-766 Pellet 30kg,,S-001,5,0,14.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S767P,S.Klang feed S-767 Pellet 30kg,,S-001,5,0,13.70,50,,,,,,,,,,,,,,,,no_image.png,standard
+S768P,S.Klang feed S-768 Pellet 30kg,,S-001,5,0,14.00,50,,,,,,,,,,,,,,,,no_image.png,standard
+S790-30K,Sanagro feed S-790 30kg,,S-001,5,0,25.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+S790-5K,Sanagro feed S-790(5kgx 6bags),,S-001,5,0,26.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+S797-30K,S.Klang feed S-797 30kg,,S-001,5,0,23.20,50,,,,,,,,,,,,,,,,no_image.png,standard
+S797-5K,S.Klang feed S-797(5kgx 6bags),,S-001,5,0,24.10,50,,,,,,,,,,,,,,,,no_image.png,standard
+S798-30K,Sanagro feed S-798 30kg,,S-001,5,0,22.60,50,,,,,,,,,,,,,,,,no_image.png,standard
+S798-5K,Sanagro feed S-798(5kgx 6bags),,S-001,5,0,23.50,50,,,,,,,,,,,,,,,,no_image.png,standard
+S799-30K,Sanagro feed S-799 30kg,,S-001,5,0,24.10,50,,,,,,,,,,,,,,,,no_image.png,standard
+S799-5K,Sanagro feed S-799(5kgx 6bags),,S-001,5,0,25.00,50,,,,,,,,,,,,,,,,no_image.png,standard
