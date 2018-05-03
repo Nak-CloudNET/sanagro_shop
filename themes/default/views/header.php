@@ -1392,16 +1392,16 @@
                                                                     </a>
                                                                 </li>
 																
-																<li id="reports_categories">
+															<!--	<li id="reports_categories">
                                                                     <a href="<?= site_url('reports/categories') ?>">
                                                                         <i class="fa fa-barcode"></i><span class="text"> <?= lang('categories_report'); ?></span>
                                                                     </a>
-                                                                </li>
+                                                                </li> 
 																<li id="reports_categories_value">
                                                                     <a href="<?= site_url('reports/categories_value') ?>">
                                                                         <i class="fa fa-barcode"></i><span class="text"> <?= lang('categories_value_report'); ?></span>
                                                                     </a>
-                                                                </li>
+                                                                </li> -->
 																
 																
 																<li id="reports_inventory_valuation_details">
