@@ -1,3 +1,7 @@
+<?php
+	//$this->erp->print_arrays();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -433,12 +437,12 @@
                                                 <span class="text"> <?= lang('add_convert'); ?></span>
                                             </a>
                                         </li> 
-                                    <!--    <li id="products_return_products" class="sub_navigation">
+                                        <li id="products_return_products" class="sub_navigation">
                                             <a class="submenu" href="<?= site_url('products/return_products'); ?>">
                                                 <i class="fa fa-retweet"></i>
                                                 <span class="text"> <?= lang('list_products_return'); ?></span>
                                             </a>
-                                        </li> -->
+                                        </li>
 
                                         <li id="products_print_barcodes" class="sub_navigation">
                                             <a class="submenu" href="<?= site_url('products/print_barcodes'); ?>">
@@ -695,13 +699,13 @@
                                                 <span class="text"> <?= lang('opening_ap'); ?></span>
                                             </a>
                                         </li>
-                                    <!--    <li id="purchases_return_purchases">
+                                        <li id="purchases_return_purchases">
                                             <a class="submenu" href="<?= site_url('purchases/return_purchases'); ?>">
                                                 <i class="fa fa-reply"></i>
                                                 <span class="text"> <?= lang('list_purchases_return'); ?></span>
                                             </a>
                                         </li>
-                                        <li id="purchases_add_purchase_return">
+                                        <!--<li id="purchases_add_purchase_return">
                                             <a class="submenu" href="<?= site_url('purchases/add_purchase_return'); ?>">
                                                 <i class="fa fa-plus-circle"></i>
                                                 <span class="text"> <?= lang('add_purchase_return'); ?></span>
@@ -1286,7 +1290,7 @@
                                             </a>
 											
                                             <ul>
-										<!--	<li class="mm_chart_report">
+											<li class="mm_chart_report">
 														<a class="dropmenu" href="#">
 															<i class="fa fa-bar-chart-o"></i>
 															<span class="text"> <?= lang('chart_report'); ?> </span>
@@ -1319,7 +1323,7 @@
                                                     </a>
                                                 </li>   
 												</ul>
-											</li> -->
+											</li>
 											<li class="mm_profit_report">
 													<a class="dropmenu" href="#">
 														<i class="fa fa-money"></i>
@@ -1365,11 +1369,11 @@
                                                                 </a>
                                                             </li>
                                                         <?php } ?>
-                                                            <!--    <li id="reports_products">
+                                                                <li id="reports_products">
                                                                     <a href="<?= site_url('reports/products') ?>">
                                                                         <i class="fa fa-barcode"></i><span class="text"> <?= lang('products_report'); ?></span>
                                                                     </a>
-                                                                </li> -->
+                                                                </li>
 																<li id="reports_warehouse_products">
                                                                     <a href="<?= site_url('reports/warehouse_products') ?>">
                                                                         <i class="fa fa-barcode"></i><span class="text"> <?= lang('warehouse_products'); ?></span>
@@ -1635,12 +1639,12 @@
 															<?php } ?>
 															
 															<?php if ($GP['products-return_list']) { ?>
-															<!--	<li id="products_return_products" class="sub_navigation">
+																<li id="products_return_products" class="sub_navigation">
 																	<a class="submenu" href="<?= site_url('products/return_products'); ?>">
 																		<i class="fa fa-retweet"></i>
 																		<span class="text"> <?= lang('list_products_return'); ?></span>
 																	</a>
-																</li> -->
+																</li>
 															<?php } ?>
 															<?php if ($GP['products-print_barcodes']) { ?>
                                                                 <li id="products_print_barcodes" class="sub_navigation">
@@ -1948,12 +1952,12 @@
 															<?php } ?>
 															
 															<?php if ($GP['purchases-return_list']) { ?>
-														<!--	<li id="purchases_return_purchases">
+															<li id="purchases_return_purchases">
 																<a class="submenu" href="<?= site_url('purchases/return_purchases'); ?>">
 																	<i class="fa fa-reply"></i>
 																	<span class="text"> <?= lang('list_purchases_return'); ?></span>
 																</a>
-															</li> -->
+															</li>
 															<?php } ?>
 															
 															<!--
@@ -2547,11 +2551,11 @@
 														</li>
 													<?php } ?>
 													<?php if($GP['product_report-product']){ ?>
-													<!--	<li id="reports_products">
+														<li id="reports_products">
 															<a href="<?= site_url('reports/products') ?>">
 																<i class="fa fa-barcode"></i><span class="text"> <?= lang('products_report'); ?></span>
 															</a>
-														</li> -->
+														</li>
 													<?php } ?>
 													<?php if($GP['product_report-warehouse']){ ?>
 														<li id="reports_warehouse_products">

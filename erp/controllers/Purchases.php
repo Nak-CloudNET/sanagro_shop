@@ -324,6 +324,7 @@ class Purchases extends MY_Controller
            (($this->Owner || $this->Admin) ? '<li>'.$pdf_link.'</li>' : ($this->GP['purchases-export'] ? '<li>'.$pdf_link.'</li>' : '')).
            (($this->Owner || $this->Admin) ? '<li>'.$email_link.'</li>' : ($this->GP['purchases-email'] ? '<li>'.$email_link.'</li>' : '')).
            (($this->Owner || $this->Admin) ? '<li>'.$print_barcode.'</li>' : ($this->GP['products_print_barcodes'] ? '<li>'.$print_barcode.'</li>' : '')).
+           (($this->Owner || $this->Admin) ? '<li>'.$purchase_return.'</li>' : ($this->GP['purchases-return_list'] ? '<li>'.$purchase_return.'</li>' : '')).
 
     '</div></div>';
 
