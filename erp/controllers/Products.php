@@ -3847,14 +3847,14 @@ class Products extends MY_Controller
             $iterm_to_uom      	= $_POST['convert_to_items_uom'];
             $iterm_to_qty       = $_POST['convert_to_items_qty'];
 			
-            $data               = array(
-									'reference_no' 	=> $_POST['reference_no'],
-									'date' 			=> $_POST['cdate'],
-									'warehouse_id' 	=> $_POST['warehouse'],
-									'updated_by' 	=> $this->session->userdata('user_id'),
-									'noted' 		=> $_POST['note'],
-									'biller_id' 	=> $_POST['biller']
-								);	
+            $data   = array(
+						'reference_no' 	=> $_POST['reference_no'],
+						'date' 			=> $this->erp->fld($_POST['cdate']),
+						'warehouse_id' 	=> $_POST['warehouse'],
+						'updated_by' 	=> $this->session->userdata('user_id'),
+						'noted' 		=> $_POST['note'],
+						'biller_id' 	=> $_POST['biller']
+					);	
 								
             $idConvert          = $this->products_model->updateConvert($convert_id, $data);
 			$id_convert_item    = $idConvert;
@@ -3900,7 +3900,7 @@ class Products extends MY_Controller
 					'product_code' 	=> $cIterm_from_code[$r], 
 					'product_id' 	=> $cIterm_from_id[$r], 
 					'warehouse_id' 	=> $warehouse_id,
-					'date' 			=> $_POST['cdate']
+					'date' 			=> $this->erp->fld($_POST['cdate'])
 				);
 				
 				$conItem = array(
@@ -3978,7 +3978,7 @@ class Products extends MY_Controller
 					'product_code' 	=> $iterm_to_code[$r], 
 					'product_id' 	=> $iterm_to_id[$r], 
 					'warehouse_id' 	=> $warehouse_id,
-					'date' 			=> $_POST['cdate']
+					'date' 			=> $this->erp->fld($_POST['cdate'])
 				);
 				
 				$conItem 		= array(

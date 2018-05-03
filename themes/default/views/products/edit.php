@@ -279,10 +279,9 @@ foreach ($warehouses_products as $warehouses_product) {
                             } 
                         }else{            
                         ?>
-                        <div class="form-group all">
+                        <div class="form-group">
                             <?= lang("product_price", "price") ?>
-                            
-                            <?= form_input('price', (isset($_POST['price']) ? $_POST['price'] : ($product ? $this->erp->formatDecimal($product->price) : '')), 'class="form-control tip pprice" id="prices" readonly="readonly" required="required"') ?>
+                            <?= form_input('price', (isset($_POST['price']) ? $_POST['price'] : ($product ? $this->erp->formatDecimal($product->price) : '')), 'class="form-control tip pprice" id="prices" required="required"') ?>
                         </div>
                     <?php
                     }
@@ -645,7 +644,7 @@ foreach ($warehouses_products as $warehouses_product) {
                     $(".select").css("pointer-events","none");
                     $(".scate").css("pointer-events","none");
                     $(".pcost").css("pointer-events","none");
-                    $(".pprice").css("pointer-events","none");
+                   // $(".pprice").css("pointer-events","none");
                    //$(".pcurrency").css("pointer-events","none");
                    //$(".palert").css("pointer-events","none");
                     $(".supplier").css("pointer-events","none");

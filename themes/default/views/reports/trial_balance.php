@@ -11,13 +11,13 @@
 ?>
 <div class="box">
     <div class="box-header">
-        <h2 class="blue"><i class="fa-fw fa fa-bars"></i><?= lang('trial_balance'); ?> >> <?= (isset($start)?$start:""); ?> >> <?= (isset($end)?$end:""); ?></h2>
+        <h2 class="blue"><i class="fa-fw fa fa-bars"></i><?= lang('trial_balance'); ?> >> <?= (isset($start) ? $start : ""); ?> >> <?= (isset($end)? $end : ""); ?></h2>
         <div class="box-icon">
             <div class="form-group choose-date hidden-xs">
                 <div class="controls">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        <input type="text" value="<?= ($start ? $this->erp->hrld($start) : '') . ' - ' . ($end ? $this->erp->hrld($end) : ''); ?>" id="daterange" class="form-control">
+                        <input type="text" value="<?= ($start ? $start : '') . ' - ' . ($end ? $end : ''); ?>" id="daterange" class="form-control">
                         <span class="input-group-addon"><i class="fa fa-chevron-down"></i></span>
                     </div>
                 </div>

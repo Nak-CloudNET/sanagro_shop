@@ -1,10 +1,5 @@
-<?php
-	//$this->erp->print_arrays();
-?>
-
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <base href="<?= site_url() ?>" />
@@ -18,9 +13,6 @@
     <link href="<?= $assets ?>styles/style.css" rel="stylesheet" />
     <script type="text/javascript" src="<?= $assets ?>js/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="<?= $assets ?>js/jquery-migrate-1.2.1.min.js"></script>
-    <!--[if lt IE 9]>
-    <script src="<?= $assets ?>js/jquery.js"></script>
-    <![endif]-->
     <noscript>
         <style type="text/css">
             #loading {
@@ -437,12 +429,12 @@
                                                 <span class="text"> <?= lang('add_convert'); ?></span>
                                             </a>
                                         </li> 
-                                        <li id="products_return_products" class="sub_navigation">
+                                     <!--   <li id="products_return_products" class="sub_navigation">
                                             <a class="submenu" href="<?= site_url('products/return_products'); ?>">
                                                 <i class="fa fa-retweet"></i>
                                                 <span class="text"> <?= lang('list_products_return'); ?></span>
                                             </a>
-                                        </li>
+                                        </li> -->
 
                                         <li id="products_print_barcodes" class="sub_navigation">
                                             <a class="submenu" href="<?= site_url('products/print_barcodes'); ?>">
@@ -621,7 +613,7 @@
                                                 <i class="fa fa-money"></i>
                                                 <span class="text"> <?= lang('installment'); ?></span>
                                             </a>
-                                        </li>
+                                        </li> -->
 										
                                         <li id="sales_return_sales">
                                             <a class="submenu" href="<?= site_url('sales/return_sales'); ?>">
@@ -699,13 +691,13 @@
                                                 <span class="text"> <?= lang('opening_ap'); ?></span>
                                             </a>
                                         </li>
-                                        <li id="purchases_return_purchases">
+                                    <!--    <li id="purchases_return_purchases">
                                             <a class="submenu" href="<?= site_url('purchases/return_purchases'); ?>">
                                                 <i class="fa fa-reply"></i>
                                                 <span class="text"> <?= lang('list_purchases_return'); ?></span>
                                             </a>
                                         </li>
-                                        <!--<li id="purchases_add_purchase_return">
+                                        <li id="purchases_add_purchase_return">
                                             <a class="submenu" href="<?= site_url('purchases/add_purchase_return'); ?>">
                                                 <i class="fa fa-plus-circle"></i>
                                                 <span class="text"> <?= lang('add_purchase_return'); ?></span>
@@ -1290,7 +1282,7 @@
                                             </a>
 											
                                             <ul>
-											<li class="mm_chart_report">
+										<!--	<li class="mm_chart_report">
 														<a class="dropmenu" href="#">
 															<i class="fa fa-bar-chart-o"></i>
 															<span class="text"> <?= lang('chart_report'); ?> </span>
@@ -1323,7 +1315,7 @@
                                                     </a>
                                                 </li>   
 												</ul>
-											</li>
+											</li> -->
 											<li class="mm_profit_report">
 													<a class="dropmenu" href="#">
 														<i class="fa fa-money"></i>
@@ -1416,12 +1408,12 @@
 																
 																
                                                                 <li id="reports_supplier_by_items">
-                                                                    <a href="<?= site_url('reports/supplier_by_items') ?>">
+                                                                    <a href="<?= site_url('reports/supplier_details') ?>">
                                                                         <i class="fa fa-barcode"></i><span class="text"> <?= lang('supplier_products'); ?></span>
                                                                     </a>
                                                                 </li>																
                                                                 <li id="reports_customer_products">
-                                                                    <a href="<?= site_url('reports/customer_products') ?>">
+                                                                    <a href="<?= site_url('reports/customer_details') ?>">
                                                                         <i class="fa fa-barcode"></i><span class="text"> <?= lang('product_customers'); ?></span>
                                                                     </a>
                                                                 </li>
@@ -1639,12 +1631,12 @@
 															<?php } ?>
 															
 															<?php if ($GP['products-return_list']) { ?>
-																<li id="products_return_products" class="sub_navigation">
+															<!--	<li id="products_return_products" class="sub_navigation">
 																	<a class="submenu" href="<?= site_url('products/return_products'); ?>">
 																		<i class="fa fa-retweet"></i>
 																		<span class="text"> <?= lang('list_products_return'); ?></span>
 																	</a>
-																</li>
+																</li> -->
 															<?php } ?>
 															<?php if ($GP['products-print_barcodes']) { ?>
                                                                 <li id="products_print_barcodes" class="sub_navigation">
@@ -1952,12 +1944,12 @@
 															<?php } ?>
 															
 															<?php if ($GP['purchases-return_list']) { ?>
-															<li id="purchases_return_purchases">
+														<!--	<li id="purchases_return_purchases">
 																<a class="submenu" href="<?= site_url('purchases/return_purchases'); ?>">
 																	<i class="fa fa-reply"></i>
 																	<span class="text"> <?= lang('list_purchases_return'); ?></span>
 																</a>
-															</li>
+															</li> -->
 															<?php } ?>
 															
 															<!--
@@ -2612,7 +2604,7 @@
 													-->
 													<?php if($GP['product_report-suppliers']){ ?>
 														<li id="reports_supplier_by_items">
-															<a href="<?= site_url('reports/supplier_by_items') ?>">
+															<a href="<?= site_url('reports/supplier_details') ?>">
 																<i class="fa fa-barcode"></i><span class="text"> <?= lang('supplier_products'); ?></span>
 															</a>
 														</li>

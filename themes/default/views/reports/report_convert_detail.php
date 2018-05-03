@@ -78,7 +78,7 @@
 			     <p class="introtext"><?= lang('customize_report'); ?></p>
                  <div id="form">
                       
-                    <?php echo form_open("reports/convert_report_detail/".$convert->product_id .'/'. 0 . '/'.$start.'/'.$end,'method="GET"'); ?>
+                    <?php echo form_open("reports/convert_report_detail/".$convert->product_id, 'method="GET"'); ?>
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="form-group">
@@ -136,13 +136,13 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <?= lang("start_date", "start_date");?>
-                                <?php echo form_input('start_date', (isset($_GET['start_date']) ? $_GET['start_date'] : ""), 'class="form-control datetime" id="start_date"'); ?>
+                                <?php echo form_input('start_date', (isset($_GET['start_date']) ? $_GET['start_date'] : ""), 'class="form-control date" id="start_date"'); ?>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <?= lang("end_date", "end_date"); ?>
-                                <?php echo form_input('end_date', (isset($_GET['end_date']) ? $_GET['end_date'] : ""), 'class="form-control datetime" id="end_date"'); ?>
+                                <?php echo form_input('end_date', (isset($_GET['end_date']) ? $_GET['end_date'] : ""), 'class="form-control date" id="end_date"'); ?>
                             </div>
                         </div>
 						 

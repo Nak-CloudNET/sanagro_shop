@@ -1,4 +1,3 @@
-
 <style type="text/css" media="all">
 	#PRData{ 
 		white-space:nowrap; 
@@ -70,7 +69,7 @@
                                 ?>
                             </div>
                         </div>
-						
+						<!--
                         <?php if(isset($biller_idd)){?>
 						<div class="col-sm-4">
 						 <div class="form-group">
@@ -86,6 +85,7 @@
                                 </div>
 						 </div>
 						<?php } ?>
+						-->
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <?= lang("warehouse", "warehouse") ?>
@@ -99,7 +99,18 @@
 
                             </div>
                         </div>
-						
+						<div class="col-sm-4">
+                            <div class="form-group">
+                                <?= lang("category", "category") ?>
+                                <?php
+                                $cat[0] = $this->lang->line("all");
+                                foreach ($categories as $category) {
+                                    $cat[$category->id] = $category->name;
+                                }
+                                echo form_dropdown('category', $cat, (isset($_POST['category']) ? $_POST['category'] : ''), 'class="form-control select" id="category" placeholder="' . lang("select") . " " . lang("category") . '" style="width:100%"')
+                                ?>
+                            </div>
+                        </div>
 						
                         <div class="col-sm-4">
                             <div class="form-group">
@@ -117,13 +128,13 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <?= lang("from_date", "from_date"); ?>
-                                <?php echo form_input('from_date', (isset($_POST['from_date']) ? $_POST['from_date'] : ""), 'class="form-control date" id="from_date"'); ?>
+                                <?php echo form_input('from_date', (isset($_POST['from_date']) ? $_POST['from_date'] : $this->erp->hrsd($from_date)), 'class="form-control date" id="from_date"'); ?>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <?= lang("to_date", "to_date"); ?>
-                                <?php echo form_input('to_date', (isset($_POST['to_date']) ? $_POST['to_date'] : ""), 'class="form-control date" id="to_date"'); ?>
+                                <?php echo form_input('to_date', (isset($_POST['to_date']) ? $_POST['to_date'] : $this->erp->hrsd($to_date)), 'class="form-control date" id="to_date"'); ?>
                             </div>
                         </div>
 						
@@ -142,10 +153,12 @@
                     <table id="PRData" class="table table-bordered table-hover table-striped table-condensed">
                         <thead>
                         <tr class="primary">
+                            <th class="" style="width: 100px"><?= lang("image") ?></th>
 							<th class=""><?= lang("type") ?></th>
 							<th class=""><?= lang("date") ?></th>
 							<th class=""><?= lang("reference") ?></th>
-							<th class=""><?= lang("name") ?></th>
+							<th class=""><?= lang("product_name") ?></th>
+							<th class=""><?= lang("categories") ?></th>
 							<th class=""><?= lang("qty") ?></th>
 							<th class=""><?= lang("unit") ?></th>
 							<th class=""><?= lang("unit_price") ?></th>
@@ -179,6 +192,10 @@
 									$this->db->where("erp_sales.warehouse_id IN ($wid)");
 								}
 							}
+							if($category_id){
+								$this->db->join('erp_products', 'erp_products.id = erp_sale_items.product_id', 'left');
+								$this->db->where("erp_products.category_id", $category_id);
+							}
 							$this->db->group_by("customer_id");
 							$customers = $this->db->get("erp_sales")->result();
 							if(is_array($customers)){
@@ -187,10 +204,11 @@
 									if($row->qty){
 								?>
 							<tr>
-								<td colspan="8" style="background:#F0F8FF;"><b><?=$row->customer?></b></td>
+                                <td colspan="10" style="background:#F0F8FF;"><b><?= $row->customer ?></b></td>
 							</tr>
 								<?php
-									 $this->db->select("product_id,product_name,erp_sale_items.quantity,net_unit_price,customer_id,reference_no,erp_sales.date,'SALE' as transaction_type,unit,option_id ")->join("erp_sales","erp_sales.id = erp_sale_items.sale_id","LEFT")->join("erp_products","erp_products.id = erp_sale_items.product_id","LEFT");
+                                        $this->db->select("product_id,product_name,erp_sale_items.quantity,net_unit_price,customer_id,reference_no,erp_sales.date,'SALE' as transaction_type,unit,option_id, erp_products.image")->join("erp_sales", "erp_sales.id = erp_sale_items.sale_id", "LEFT")->join("erp_products", "erp_products.id = erp_sale_items.product_id", "LEFT");
+                                        //$this->db->join('erp_products', 'erp_products.id = erp_sale_items.product_id', 'left');
 									if($reference){
 										$this->db->where("reference_no",$reference);
 									}
@@ -210,6 +228,11 @@
 										if($wid){
 											$this->db->where("erp_sales.warehouse_id IN ($wid)");
 										}
+									}
+									$this->db->select('erp_sale_items.*, erp_categories.name as cate_name');
+									$this->db->join('erp_categories', 'erp_categories.id = erp_products.category_id', 'left');									
+									if($category_id){										
+										$this->db->where('erp_products.category_id', $category_id);
 									}
 									$sale_items = $this->db->get("erp_sale_items")->result();
 									$tqty = 0 ; 
@@ -235,10 +258,27 @@
 											}
 								?>
 									<tr>
+                                        <td style="text-align:center !important;">
+                                            <ul class="enlarge">
+                                                <li>
+                                                    <img src="<?= base_url() ?>/assets/uploads/thumbs/<?= $row1->image ?>"
+                                                         class="img-responsive" style="width:50px;"/>
+                                                    <span>
+                                                      <a href="<?= base_url() ?>/assets/uploads/thumbs/<?= $row1->image ?>"
+                                                         data-toggle="lightbox">
+                                                        <img src="<?= base_url() ?>/assets/uploads/thumbs/<?= $row1->image ?>"
+                                                             style="width:150px; z-index: 9999999999999;"
+                                                             class="img-thumbnail"/>
+                                                      </a>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
 										<td class="text-center"><?=$row1->transaction_type?></td>
 										<td><?=$this->erp->hrsd($row1->date)?></td>
 										<td><?=$row1->reference_no?></td>
 										<td><?=$row1->product_name?></td>
+										<td style="text-align:center;"><?=$row1->cate_name?></td>
 										<td class="text-right"><?=$this->erp->formatQuantity($vqty)?></td>
 										<td ><?=$unit_name?></td>
 										<td class="text-right"><?=$this->erp->formatMoney(abs($row1->net_unit_price))?></td>
@@ -254,6 +294,8 @@
 								?>
 							<tr style="background:#F0F8FF;">
 								<td ><b>Total >> <?=$row->customer?></b></td>
+								<td ></td>
+                                <td></td>
 								<td ></td>
 								<td ></td>
 								<td ></td>
@@ -271,9 +313,11 @@
 							}
 							}
 							?>
-							<tr >
+							<tr>
 								<td style="background:#4682B4;color:white;"><b>Grand Total</b></td>
 								<td style="background:#4682B4;color:white;"></td>
+								<td style="background:#4682B4;color:white;"></td>
+                                <td style="background:#4682B4;color:white;"></td>
 								<td style="background:#4682B4;color:white;"></td>
 								<td style="background:#4682B4;color:white;"></td>
 								<td style="background:#4682B4;color:white;" class="text-right"><b><?=$this->erp->formatQuantity($gqty)?></b></td>
@@ -302,18 +346,6 @@
         return false;
     });
 	$(document).ready(function(){
-		/*
-		$("#excel").click(function(e){
-			e.preventDefault();
-			window.location.href = "<?=site_url('products/getProductAll/0/xls/')?>";
-			return false;
-		});
-		$('#pdf').click(function (event) {
-            event.preventDefault();
-            window.location.href = "<?=site_url('products/getProductAll/pdf/?v=1'.$v)?>";
-            return false;
-        });
-		*/
 		$('.date').datetimepicker({
 			format: site.dateFormats.js_sdate, 
 			fontAwesome: true, 

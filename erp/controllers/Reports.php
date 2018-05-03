@@ -6035,16 +6035,15 @@ class Reports extends MY_Controller
 		}else{
 			$end = null;
 		}
+		
 		$start_date = "";
 		$end_date ="";
 		$start_ = "";
 		$end_ = "";
-		if($start  && $end){
-		$start_date =explode("%20",$start);
-		$end_date =explode("%20",$end);
-		$start_= ($start_date[0]?$start_date[0].' '.$start_date[1]:null);
-		$end_= $end_date[0].' '.$end_date[1]; 
-		}
+		if($start && $end){
+			$start_= $this->erp->fld($start).' 00:00';
+			$end_= $this->erp->fld($end).' 23:59';
+		}		
 	    $str ="";
 		$reference_no = "";
 		$warehouse_id = "";
@@ -6117,7 +6116,6 @@ class Reports extends MY_Controller
 		$this->data['id'] = $id;
         $this->data['convert_detail'] = $this->reports_model->getconvertDetail($id,$start_,$end_,$config["ob_set"],$config["per_page"],$reference_no,$warehouse_id,$created_by,$wid);
 		$this->data['biller_idd'] = $this->reports_model->getBiilerByUserID();
-		//$this->data['warehouses'] = $this->site->getAllWarehouses();
 		$this->data['warehouses'] = $this->reports_model->getWareFullByUSER($wid);
 		$this->data['created_by'] =$this->site->getAllUsers();
 		$this->data['products'] =$this->site->getAllProducts();
@@ -6128,17 +6126,6 @@ class Reports extends MY_Controller
 	function transfers_report()
     { 
 		$this->load->library("pagination");
-		 
-		/*if($this->input->post('to_warehouse')){
-			 $to_warehouse =$this->input->post('to_warehouse');
-		}else{
-			$to_warehouse =null;
-		} 
-		if($this->input->post('from_warehouse')){
-			 $from_warehouse =$this->input->post('from_warehouse');
-		}else{
-			$from_warehouse =null;
-		} */
 		$wid = $this->reports_model->getWareByUserID();
 		$str="";
 		$to_warehouse = "";
@@ -11757,6 +11744,7 @@ class Reports extends MY_Controller
 		}else{
 			$this->data['billers'] = $this->site->getAllCompanies('biller');
 		}
+		//echo urldecode($start_date).'/////'.urldecode($end_date).'hello1'; exit();
 		$this->data['start'] = urldecode($start_date);
         $this->data['end'] = urldecode($end_date);
 		
@@ -11764,8 +11752,8 @@ class Reports extends MY_Controller
         
         $bc = array(array('link' => base_url(), 'page' => lang('home')), array('link' => '#', 'page' => lang('reports/trial_balance')));
         $meta = array('page_title' => lang('trial_balance'), 'bc' => $bc);
-		$from_date = date('Y-m-d H:m',strtotime(urldecode($start_date)));//'2014-08-01';
-		$to_date = date('Y-m-d H:m',strtotime(urldecode($end_date)));//'2015-09-01';
+		$from_date = urldecode($start_date);//'2014-08-01';
+		$to_date = urldecode($end_date);//'2015-09-01';	
 		
 		$data10 = $this->accounts_model->getStatementByDate('10',$from_date,$to_date,$biller_id);
 		$this->data['data10'] = $data10;
@@ -18994,8 +18982,8 @@ function salesDetail_actions(){
 	
 	function supplier_details()
     {
-       //$this->erp->checkPermissions('inventory_valuation_detail', NULL, 'product_report');
-        
+       
+        $datt =$this->reports_model->getLastDate("erp_purchase_items","date");
         if ($this->input->post('supplier')) {
             $supplier =  $this->input->post('supplier');
         }else{
@@ -19022,12 +19010,12 @@ function salesDetail_actions(){
         if ($this->input->post('from_date')) {
             $from_date =  $this->erp->fld($this->input->post('from_date'));
         }else{
-            $from_date = null;
+            $from_date = $datt;
         }
         if ($this->input->post('to_date')) {
             $to_date = $this->erp->fld($this->input->post('to_date'));
         }else{
-            $to_date=null;
+            $to_date= $datt;
         }
 		$this->data['supplier']    = $supplier;
 		$this->data['warehouse']    = $warehouse;
@@ -19067,15 +19055,18 @@ function salesDetail_actions(){
         }else{
             $this->data['to_date1'] = trim($to_date);
         }
+        $biller_id = $this->session->userdata('biller_id');
 		$wid = $this->reports_model->getWareByUserID();
 		$this->data['warefull'] = $this->reports_model->getWareFullByUSER($wid);
 		$this->data['biller_idd'] = $this->reports_model->getBiilerByUserID();
-		//$this->erp->print_arrays($this->reports_model->getAllCategories());
+
+        $this->data['billers'] = $this->site->getAllCompanies('biller');
+        $this->data['user_billers'] = $this->sales_model->getAllCompaniesByID($biller_id);
         $bc = array(array('link' => base_url(), 'page' => lang('home')), array('link' => '#', 'page' => lang('reports')));
         $meta = array('page_title' => lang('supplier_products'), 'bc' => $bc);
         $this->page_construct('reports/supplier_details', $meta, $this->data);
-
     }
+	
 	function transferReport(){
         if ($this->input->post('form_action') == 'export_excel' || $this->input->post('form_action') == 'export_pdf') {
             if (!empty($_POST['val'])) {
@@ -19344,21 +19335,24 @@ function salesDetail_actions(){
             }
         }   
     }
+	
 	function customersReportDetails($pdf = NULL, $excel = NULL,$warehouse,$customer,$reference,$product_id,$from_date,$to_date){
-        if ($pdf || $excel) {
+        $row        = null;
+        if ($pdf || $excel) {			
             $this->load->library('excel');
             $this->excel->setActiveSheetIndex(0);
             $this->excel->getActiveSheet()->setTitle(lang('inventory'));
             $this->excel->getActiveSheet()->SetCellValue('A1', lang('type'));
             $this->excel->getActiveSheet()->SetCellValue('B1', lang('date'));
             $this->excel->getActiveSheet()->SetCellValue('C1', lang('reference'));
-            $this->excel->getActiveSheet()->SetCellValue('D1', lang('name'));
-            $this->excel->getActiveSheet()->SetCellValue('E1', lang('qty'));
-            $this->excel->getActiveSheet()->SetCellValue('F1', lang('unit'));
-            $this->excel->getActiveSheet()->SetCellValue('G1', lang('unit_price'));
-            $this->excel->getActiveSheet()->SetCellValue('H1', lang('amount'));
-            $this->excel->getActiveSheet()->getStyle('A1'. $row.':H1'.$row)->getFont()->setBold(true);
-			$this->excel->getActiveSheet()->getStyle('A1:H1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+            $this->excel->getActiveSheet()->SetCellValue('D1', lang('product_name'));
+            $this->excel->getActiveSheet()->SetCellValue('E1', lang('categories'));
+            $this->excel->getActiveSheet()->SetCellValue('F1', lang('qty'));
+            $this->excel->getActiveSheet()->SetCellValue('G1', lang('unit'));
+            $this->excel->getActiveSheet()->SetCellValue('H1', lang('unit_price'));
+            $this->excel->getActiveSheet()->SetCellValue('I1', lang('amount'));
+            $this->excel->getActiveSheet()->getStyle('A1'. $row.':I1'.$row)->getFont()->setBold(true);
+			$this->excel->getActiveSheet()->getStyle('A1:I1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 			$wid = $this->reports_model->getWareByUserID();
             $row = 2;
             $grand = 0 ;
@@ -19382,17 +19376,17 @@ function salesDetail_actions(){
 				}
 			}
 			  if($from_date && $to_date){
-                    $this->db->where('erp_sales.date >="'.$from_date.'00.00" AND erp_sales.date<="'.$to_date.'23.59"');
+                    $this->db->where('erp_sales.date >="'.$from_date.' 00.00" AND erp_sales.date<="'.$to_date.' 23.59"');
                 }
             $this->db->group_by("customer_id");
             $customers = $this->db->get("erp_sales")->result();
             foreach($customers as $cus){
 				if($cus->customer_id){
 					if($cus->qty){
-                // $this->erp->print_arrays($cus);
+               
                 $this->excel->getActiveSheet()->SetCellValue('A' . $row, $cus->customer);
-                $this->excel->getActiveSheet()->mergeCells('A'.$row.':H'.$row);
-                $this->excel->getActiveSheet()->getStyle('A'. $row.':H'.$row)->getFont()->setBold(true);
+                $this->excel->getActiveSheet()->mergeCells('A'.$row.':I'.$row);
+                $this->excel->getActiveSheet()->getStyle('A'. $row.':I'.$row)->getFont()->setBold(true);
 
                 $this->db->select("product_id,product_name,erp_sale_items.quantity,net_unit_price,customer_id,reference_no,erp_sales.date,'SALE' as transaction_type,unit,option_id ")->join("erp_sales","erp_sales.id = erp_sale_items.sale_id","LEFT")->join("erp_products","erp_products.id = erp_sale_items.product_id","LEFT");
                 if($reference){
@@ -19412,15 +19406,17 @@ function salesDetail_actions(){
 					}
 				}
                 if($from_date && $to_date){
-                    $this->db->where('date >="'.$from_date.'00.00" AND date<="'.$to_date.'23.59"');
+                    $this->db->where('date >="'.$from_date.' 00.00" AND date<="'.$to_date.' 23.59"');
                 }
+				$this->db->select('erp_sale_items.*, erp_categories.name as cate_name');
+				$this->db->join('erp_categories', 'erp_categories.id = erp_products.category_id', 'left');
                 $sale_items = $this->db->get("erp_sale_items")->result();
                 $tqty = 0 ; 
                 $amount = 0 ;
                 $row++;
 				$vqty = 0;
                 foreach($sale_items as $row1){
-                    // $this->erp->print_arrays($row1);
+                   
                     if($cus->customer_id == $row1->customer_id){
                         if($row1->option_id){
                             $unit_n = $this->db->get_where('erp_product_variants',array('id'=> $row1->option_id),1)->row();
@@ -19436,22 +19432,23 @@ function salesDetail_actions(){
                         $this->excel->getActiveSheet()->SetCellValue('B' . $row, $this->erp->hrsd($row1->date));
                         $this->excel->getActiveSheet()->SetCellValue('C' . $row, $row1->reference_no." ");
                         $this->excel->getActiveSheet()->SetCellValue('D' . $row, $row1->product_name);
-                        $this->excel->getActiveSheet()->SetCellValue('E' . $row, $vqty);
-                        $this->excel->getActiveSheet()->SetCellValue('F' . $row, $unit_name);
-                        $this->excel->getActiveSheet()->SetCellValue('G' . $row, $row1->net_unit_price);
-                        $this->excel->getActiveSheet()->SetCellValue('H' . $row, ($row1->quantity)*($row1->net_unit_price));
+                        $this->excel->getActiveSheet()->SetCellValue('E' . $row, $row1->cate_name);
+                        $this->excel->getActiveSheet()->SetCellValue('F' . $row, $vqty);
+                        $this->excel->getActiveSheet()->SetCellValue('G' . $row, $unit_name);
+                        $this->excel->getActiveSheet()->SetCellValue('H' . $row, $row1->net_unit_price);
+                        $this->excel->getActiveSheet()->SetCellValue('I' . $row, ($row1->quantity)*($row1->net_unit_price));
                         $tqty+=$vqty;
                         $amount+=(abs($row1->quantity)*abs($row1->net_unit_price));
                         $row++;
                         }
                     }
                     $this->excel->getActiveSheet()->SetCellValue('A' . $row, 'Total >> '.$cus->customer);
-                    $this->excel->getActiveSheet()->SetCellValue('E' . $row, $tqty);
-                    $this->excel->getActiveSheet()->SetCellValue('H' . $row, $this->erp->formatMoney($amount));
-                    $this->excel->getActiveSheet()->getStyle('H'. $row)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
+                    $this->excel->getActiveSheet()->SetCellValue('F' . $row, $tqty);
+                    $this->excel->getActiveSheet()->SetCellValue('I' . $row, $this->erp->formatMoney($amount));
+                    $this->excel->getActiveSheet()->getStyle('I'. $row)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
                     // $this->excel->getActiveSheet()->mergeCells('A'.$row.':D'.$row);
-                    $this->excel->getActiveSheet()->getStyle('A'. $row.':H'.$row)->getFont()->setBold(true);
-                    $this->excel->getActiveSheet()->getStyle('E'.$row. ':H'.$row)->getBorders()->getTop()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);
+                    $this->excel->getActiveSheet()->getStyle('A'. $row.':I'.$row)->getFont()->setBold(true);
+                    $this->excel->getActiveSheet()->getStyle('F'.$row. ':I'.$row)->getBorders()->getTop()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);
                     $grand +=$amount;
                     $gqty+=$tqty;
                     $row++;
@@ -19460,12 +19457,12 @@ function salesDetail_actions(){
 			}
 			}
                 $this->excel->getActiveSheet()->SetCellValue('A' . $row, 'Grand Total ');
-                $this->excel->getActiveSheet()->SetCellValue('E' . $row, $gqty);
-                $this->excel->getActiveSheet()->SetCellValue('H' . $row, $this->erp->formatMoney($grand));
-                $this->excel->getActiveSheet()->getStyle('H'. $row)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
+                $this->excel->getActiveSheet()->SetCellValue('F' . $row, $gqty);
+                $this->excel->getActiveSheet()->SetCellValue('I' . $row, $this->erp->formatMoney($grand));
+                $this->excel->getActiveSheet()->getStyle('I'. $row)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
                 // $this->excel->getActiveSheet()->mergeCells('A'.$row.':D'.$row);
-                $this->excel->getActiveSheet()->getStyle('A'. $row.':H'.$row)->getFont()->setBold(true);
-                $this->excel->getActiveSheet()->getStyle('E'.$row. ':H'.$row)->getBorders()->getTop()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);
+                $this->excel->getActiveSheet()->getStyle('A'. $row.':I'.$row)->getFont()->setBold(true);
+                $this->excel->getActiveSheet()->getStyle('F'.$row. ':I'.$row)->getBorders()->getTop()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);
                 
             }
          
@@ -19478,6 +19475,7 @@ function salesDetail_actions(){
             $this->excel->getActiveSheet()->getColumnDimension('F')->setWidth(15);
             $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(15);
             $this->excel->getActiveSheet()->getColumnDimension('H')->setWidth(15);
+            $this->excel->getActiveSheet()->getColumnDimension('I')->setWidth(15);
            // $this->excel->getActiveSheet()->getStyle('A1'. $row.':H1'.$row)->getFont()->setBold(true);
 
             $filename = lang('Product Customer'). date('Y_m_d_H_i_s');
@@ -19517,19 +19515,25 @@ function salesDetail_actions(){
                 exit();
             }
         }
+		
 	function customer_details()
     {
-       //$this->erp->checkPermissions('inventory_valuation_detail', NULL, 'product_report');
-        
+       
+        $datt =$this->reports_model->getLastDate("erp_sales","date");
         if ($this->input->post('customer')) {
             $customer =  $this->input->post('customer');
         }else{
             $customer = null;
         }
-		 if ($this->input->post('warehouse')) {
+		if ($this->input->post('warehouse')) {
             $warehouse =  $this->input->post('warehouse');
         }else{
             $warehouse = null;
+        }
+		if ($this->input->post('category')) {
+            $category_id =  $this->input->post('category');
+        }else{
+            $category_id = null;
         }
         if ($this->input->post('reference_no')) {
             $reference = $this->input->post('reference_no');
@@ -19547,16 +19551,19 @@ function salesDetail_actions(){
         if ($this->input->post('from_date')) {
             $from_date =  $this->erp->fld($this->input->post('from_date'));
         }else{
-            $from_date = null;
+            $from_date =$datt;
         }
         if ($this->input->post('to_date')) {
             $to_date = $this->erp->fld($this->input->post('to_date'));
         }else{
-            $to_date=null;
+            $to_date= $datt;
         }
-		$this->data['customer']    = $customer;
+		
+		
+		$this->data['customer']    	= $customer;
 		$this->data['warehouse']    = $warehouse;
 		$this->data['reference']    = $reference;
+		$this->data['category_id']    	= $category_id;
 		$this->data['product_id']   = $product_id;
 		$this->data['from_date']    = $from_date;
 		$this->data['to_date'] 	  	= $to_date;
@@ -19577,7 +19584,7 @@ function salesDetail_actions(){
         }else{
             $this->data['product_id1'] = $product_id;
         }
-		 if($warehouse == null){
+		if($warehouse == null){
              $this->data['warehouse1'] = 0;
         }else{
             $this->data['warehouse1'] = $warehouse;
@@ -19591,16 +19598,16 @@ function salesDetail_actions(){
              $this->data['to_date1'] = 0;
         }else{
             $this->data['to_date1'] = trim($to_date);
-        }
+        }		
 		$wid = $this->reports_model->getWareByUserID();
 		$this->data['warefull'] = $this->reports_model->getWareFullByUSER($wid);
 		$this->data['biller_idd'] = $this->reports_model->getBiilerByUserID();
-		//$this->erp->print_arrays($this->reports_model->getAllCategories());
+		$this->data['categories'] = $this->site->getAllCategories();
         $bc = array(array('link' => base_url(), 'page' => lang('home')), array('link' => '#', 'page' => lang('reports')));
         $meta = array('page_title' => lang('product_customers'), 'bc' => $bc);
         $this->page_construct('reports/customer_details', $meta, $this->data);
-
     }
+	
 	function productionReports(){
         if ($this->input->post('form_action') == 'export_excel' || $this->input->post('form_action') == 'export_pdf') {
             if (!empty($_POST['val'])) {

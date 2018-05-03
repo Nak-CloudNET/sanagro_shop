@@ -87,7 +87,7 @@
                 todayHighlight: 1,
                 startView: 2,
                 forceParse: 0
-            }).datetimepicker('update', new Date());
+            }).datetimepicker('update', '<?= $this->erp->hrld($convert->Date); ?>');
         }
 		/*
         $(document).on('change', '#cdate', function (e) {
