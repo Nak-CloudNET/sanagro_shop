@@ -4953,15 +4953,22 @@ class system_settings extends MY_Controller
         }
 
        // $pp = "( SELECT {$this->db->dbprefix('product_prices')}.product_id as product_id, {$this->db->dbprefix('product_prices')}.price as price FROM {$this->db->dbprefix('product_prices')} WHERE price_group_id = {$group_id} ) PP";
-		
+
 		$pp = '(SELECT erp_product_prices.product_id as product_id,currency_code, erp_product_prices.price as price FROM erp_product_prices WHERE erp_product_prices.price_group_id = "'.$group_id.'" group by price_group_id) PP';
 
         $this->load->library('datatables');
         $this->datatables
-            ->select("products.id as id, products.code as product_code, products.name as product_name, PP.currency_code AS currency , PP.price as price ")
+            ->select("
+                products.id as id, 
+                products.code as product_code, 
+                products.name as product_name, 
+                erp_product_prices.currency_code AS currency , 
+                (select erp_product_prices.price from erp_product_prices where erp_product_prices.product_id=erp_products.id AND erp_product_prices.price_group_id=".$group_id.") as price 
+                ")
             ->from("products")
-            ->join($pp, 'PP.product_id = products.id', 'left')
 			->join('currencies', 'currencies.code = products.currentcy_code', 'left')
+            ->join('product_prices', 'product_prices.product_id = products.id', 'left')
+            ->group_by('products.id')
             ->edit_column("currency", "$1__$2", 'id, currency')
 			->edit_column("price", "$1__$2", 'id, price')
             ->add_column("Actions", "<div class=\"text-center\"><button class=\"btn btn-primary btn-xs form-submit\" type=\"button\"><i class=\"fa fa-check\"></i></button></div>", "id");
