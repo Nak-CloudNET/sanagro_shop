@@ -4959,11 +4959,11 @@ class system_settings extends MY_Controller
         $this->load->library('datatables');
         $this->datatables
             ->select("
-                products.id as id, 
-                products.code as product_code, 
-                products.name as product_name, 
-                erp_product_prices.currency_code AS currency , 
-                (select erp_product_prices.price from erp_product_prices where erp_product_prices.product_id=erp_products.id AND erp_product_prices.price_group_id=".$group_id.") as price 
+               {$this->db->dbprefix('products')}.id as id, 
+                {$this->db->dbprefix('products')}.code as product_code, 
+                {$this->db->dbprefix('products')}.name as product_name, 
+                {$this->db->dbprefix('product_prices')}.currency_code AS currency, 
+                (select {$this->db->dbprefix('product_prices')}.price from {$this->db->dbprefix('product_prices')} where {$this->db->dbprefix('product_prices')}.product_id={$this->db->dbprefix('products')}.id AND {$this->db->dbprefix('product_prices')}.price_group_id={$group_id}) as price 
                 ")
             ->from("products")
 			->join('currencies', 'currencies.code = products.currentcy_code', 'left')

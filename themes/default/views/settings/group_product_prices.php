@@ -78,7 +78,8 @@
                 nRow.className = "product_group_price_id";
                 return nRow;
             },
-            "aoColumns": [{"bSortable": false, "mRender": checkbox}, null, null, {"mRender": setCurrencies}, {"bSortable": false, "mRender": price_input}, {"bSortable": false}]
+            "aoColumns": [{"bSortable": false, "mRender": checkbox}, null, null, {"mRender": setCurrencies}, {"bSortable": false, "mRender": price_input}, {"bSortable": false}],
+            "aoColumnDefs":[ { "bSearchable": false, "aTargets": [4,5] }]
         }).fnSetFilteringDelay();
 		
 		$(".currency").select2();
