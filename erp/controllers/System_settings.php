@@ -29,6 +29,7 @@ class system_settings extends MY_Controller
 
     function index()
     {
+        $this->erp->checkPermissions('setting','','system');
         $this->form_validation->set_rules('site_name', lang('site_name'), 'trim|required');
         $this->form_validation->set_rules('dateformat', lang('dateformat'), 'trim|required');
         $this->form_validation->set_rules('timezone', lang('timezone'), 'trim|required');
@@ -1377,7 +1378,8 @@ class system_settings extends MY_Controller
 				'report_convert' => $this->input->post('report_convert'),
 				'report_list_using_stock' => $this->input->post('report_list_using_stock'),
 				'report_transfers' => $this->input->post('report_transfers'),
-				
+
+                'system-setting' 		    => $this->input->post('system-setting'),
 				'settings-currencies' 		=> $this->input->post('settings-currencies'),
 				'settings-customer_groups' 	=> $this->input->post('settings-customer_groups'),
 				'settings-categories' 	    => $this->input->post('settings-categories'),

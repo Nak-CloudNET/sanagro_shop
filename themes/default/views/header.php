@@ -107,16 +107,16 @@
                                 </a>
                             </li>
                         <?php } ?>
-						<li class="dropdown hidden-xs">
-							<a class="btn tip" title="<?= lang('calculator') ?>" data-placement="left" href="#" data-toggle="dropdown">
-								<i class="fa fa-calculator"></i><p><?= lang('calculator') ?></p>
-							</a>
-							<ul class="dropdown-menu pull-right calc">
-								<li class="dropdown-content">
-									<span id="inlineCalc"></span>
-								</li>
-							</ul>
-						</li>
+                                <li class="dropdown hidden-xs">
+                                    <a class="btn tip" title="<?= lang('calculator') ?>" data-placement="left" href="#" data-toggle="dropdown">
+                                        <i class="fa fa-calculator"></i><p><?= lang('calculator') ?></p>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right calc">
+                                        <li class="dropdown-content">
+                                            <span id="inlineCalc"></span>
+                                        </li>
+                                    </ul>
+                                </li>
                                 	
                                 <?php if ($info) { ?>
                                     <li class="dropdown hidden-sm">
@@ -206,18 +206,18 @@
                                                     </li>
                                                     <li class="dropdown hidden-xs">
                                                         <a class="btn tip" title="<?= lang('language') ?>" data-placement="left" data-toggle="dropdown" href="#">
-                            <img src="<?= base_url('assets/images/' . $Settings->language . '.png'); ?>" alt=""><p><?= lang('language') ?></p>
-                        </a>
-                                                        <ul class="dropdown-menu pull-right">
-                                                            <?php $scanned_lang_dir = array_map(function ($path) {
-                                return basename($path);
-                            }, glob(APPPATH . 'language/*', GLOB_ONLYDIR));
-                            foreach ($scanned_lang_dir as $entry) { ?>
-                                                                <li>
-                                                                    <a href="<?= site_url('welcome/language/' . $entry); ?>">
-                                        <img src="<?= base_url(); ?>assets/images/<?= $entry; ?>.png" class="language-img"> 
-                                        &nbsp;&nbsp;<?= ucwords($entry); ?>
-                                    </a>
+                                                            <img src="<?= base_url('assets/images/' . $Settings->language . '.png'); ?>" alt=""><p><?= lang('language') ?></p>
+                                                        </a>
+                                                                                        <ul class="dropdown-menu pull-right">
+                                                                                            <?php $scanned_lang_dir = array_map(function ($path) {
+                                                                return basename($path);
+                                                            }, glob(APPPATH . 'language/*', GLOB_ONLYDIR));
+                                                            foreach ($scanned_lang_dir as $entry) { ?>
+                                                                                                <li>
+                                                                                                    <a href="<?= site_url('welcome/language/' . $entry); ?>">
+                                                                        <img src="<?= base_url(); ?>assets/images/<?= $entry; ?>.png" class="language-img">
+                                                                        &nbsp;&nbsp;<?= ucwords($entry); ?>
+                                                                    </a>
                                                                 </li>
                                                                 <?php } ?>
                                                         </ul>
@@ -2373,13 +2373,20 @@
                                             </ul>
                                         </li>
 										-->
-									<?php  if($GP['settings-currencies'] || $GP['settings-customer_groups'] || $GP['settings-categories'] || $GP['settings-price_groups'] || $GP['settings-units'] || $GP['settings-bom'] || $GP['settings-payment_term']) { ?>
+									<?php  if($GP['settings-currencies'] || $GP['settings-customer_groups'] || $GP['settings-categories'] || $GP['settings-price_groups'] || $GP['settings-units'] || $GP['settings-bom'] || $GP['settings-payment_term'] || $GP['system-setting']) { ?>
 										<li class="mm_system_settings <?= strtolower($this->router->fetch_method()) != 'settings' ? '' : 'mm_pos' ?>">
 											<a class="dropmenu" href="#">
 												<i class="fa fa-cog"></i><span class="text"> <?= lang('settings'); ?> </span>
 												<span class="chevron closed"></span>
 											</a>
 											<ul>
+                                                    <?php if($GP['system-setting']) { ?>
+                                                        <li id="system_settings_currencies">
+                                                            <a href="<?= site_url('system_settings') ?>">
+                                                                <i class="fa fa-cog"></i><span class="text"> <?= lang('system_settings'); ?></span>
+                                                            </a>
+                                                        </li>
+                                                    <?php } ?>
 													<?php if($GP['settings-currencies']) { ?>
 														<li id="system_settings_currencies">
 															<a href="<?= site_url('system_settings/currencies') ?>">

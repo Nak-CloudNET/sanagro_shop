@@ -934,6 +934,9 @@
                                     
                                     <td colspan="7">
 									    <div class="container-fluid" style="padding-left:30px;">
+                                            <input type="checkbox" value="1" id="system-setting" class="checkbox"
+                                                   name="system-setting" <?php echo $p->{'system-setting'} ? "checked" : ''; ?>><label
+                                                    for="transfers-email" class="padding05"><?= lang('system_settings') ?></label>
 											<input type="checkbox" value="1" id="settings-currencies" class="checkbox"
 												   name="settings-currencies" <?php echo $p->{'settings-currencies'} ? "checked" : ''; ?>><label
 												for="transfers-email" class="padding05"><?= lang('currencies') ?></label>
